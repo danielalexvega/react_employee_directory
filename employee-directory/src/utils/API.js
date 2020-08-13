@@ -1,0 +1,3 @@
+//get info from the database... mongoDB... 
+
+//need to get all employees... add employees... delete employees... update employees

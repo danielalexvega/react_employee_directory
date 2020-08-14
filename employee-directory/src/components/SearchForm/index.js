@@ -1,30 +1,31 @@
 import React from "react";
 import "./style.css";
+import SearchContext from "../../utils/SearchContext";
 
-// Using the datalist element we can create autofill suggestions based on the props.breeds array
-function SearchForm(props) {
+function SearchForm() {
+  const { search, employees, handleInputChange } = useContext(SearchContext);
+
   return (
     <form className="search">
       <div className="form-group">
-        <label htmlFor="breed">Breed Name:</label>
+        <label htmlFor="employeeName">Employee Name:</label>
         <input
-          value={props.search}
-          onChange={props.handleInputChange}
-          name="breed"
-          list="breeds"
+          value={search}
+          onChange={handleInputChange}
+          name="employeeName"
+          list="employeeList"
           type="text"
           className="form-control"
-          placeholder="Type in a dog breed to begin"
-          id="breed"
+          placeholder="Type the employees name"
+          id="employeeName"
         />
-        <datalist id="breeds">
-          {props.breeds.map(breed => (
-            <option value={breed} key={breed} />
+        <datalist id="employees">
+          {employees.map(employee => (
+            <option value={`${employee.name.first} ${employee.name.last}`}
+              key={`${employee.name.first} ${employee.name.last}`} />
           ))}
         </datalist>
-        <button type="submit" onClick={props.handleFormSubmit} className="btn btn-success">
-          Search
-        </button>
+
       </div>
     </form>
   );

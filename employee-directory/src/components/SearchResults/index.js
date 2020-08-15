@@ -9,7 +9,7 @@ function SearchResults(props) {
     <div style={{display:"inline-flex", flexWrap:"wrap"}}>
 
       {props.filteredEmployees.map((employee, index)  => (
-        <div className="card d-flex flex-wrap" style={{width: 300, margin: 10}} key={index}>
+        <div className="card d-flex flex-wrap" style={{width: 250, margin: 10}} key={index}>
           <img src={employee.picture.large}
             alt={`${employee.name.first} ${employee.name.last}`}
             className="card-img-top" />

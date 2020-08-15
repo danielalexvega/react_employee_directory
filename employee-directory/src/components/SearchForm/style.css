@@ -1,3 +1,11 @@
+.sticky-div {
+  background-color: white;
+  position: -webkit-sticky;
+  position:sticky;
+  top: 0;
+  z-index: 100;
+}
+
 form.search {
   overflow: auto;
   margin-bottom: 10px;
@@ -5,5 +13,25 @@ form.search {
 
 form.search button[type="submit"] {
   float: right;
-  margin-top: 10px;
+  margin-top: 5px;
+}
+
+.label{
+  font-size: 24px;
+  margin-top: 20px;
+}
+
+form input{
+  margin-top:20px;
+}
+
+.form-control{
+  width:85%;
+}
+button {
+  margin-top: 20px;
+}
+
+input {
+  float:left;
 }

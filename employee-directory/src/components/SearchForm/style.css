@@ -4,6 +4,7 @@
   position:sticky;
   top: 0;
   z-index: 100;
+  padding-bottom:20px;
 }
 
 form.search {
@@ -23,6 +24,10 @@ form.search button[type="submit"] {
 
 form input{
   margin-top:20px;
+}
+
+form {
+  display: inline;
 }
 
 .form-control{

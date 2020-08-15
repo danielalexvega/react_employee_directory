@@ -25,9 +25,9 @@ function SearchForm(props) {
                 key={`${employee.name.first} ${employee.name.last}`} />
             ))}
           </datalist>
-          <button className="btn btn-success">Reset</button>
         </div>
       </form>
+          <button className="btn btn-success" onClick={props.handleReset}>Reset</button>
     </div >
   );
 }

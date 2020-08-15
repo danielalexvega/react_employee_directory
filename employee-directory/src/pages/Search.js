@@ -41,6 +41,11 @@ function Search() {
     );
   }
 
+  const handleReset = event => {
+    event.preventDefault();
+    setFilteredEmployees(employees);
+  }
+
   return (
     <div>
       <Container>
@@ -52,6 +57,7 @@ function Search() {
           handleFormSubmit={handleFormSubmit}
           employees={employees}
           search={search}
+          handleReset={handleReset}
         />
         <SearchResults
           filteredEmployees={filteredEmployees}

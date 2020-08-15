@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/danielalexvega/react_employee_directory/static/css/main.956cefb0.chunk.css",
+    "main.js": "/danielalexvega/react_employee_directory/static/js/main.172704c2.chunk.js",
+    "main.js.map": "/danielalexvega/react_employee_directory/static/js/main.172704c2.chunk.js.map",
+    "runtime-main.js": "/danielalexvega/react_employee_directory/static/js/runtime-main.195c5965.js",
+    "runtime-main.js.map": "/danielalexvega/react_employee_directory/static/js/runtime-main.195c5965.js.map",
+    "static/js/2.ce7babb0.chunk.js": "/danielalexvega/react_employee_directory/static/js/2.ce7babb0.chunk.js",
+    "static/js/2.ce7babb0.chunk.js.map": "/danielalexvega/react_employee_directory/static/js/2.ce7babb0.chunk.js.map",
+    "index.html": "/danielalexvega/react_employee_directory/index.html",
+    "precache-manifest.58a93ced0687eed9761ab41423da8999.js": "/danielalexvega/react_employee_directory/precache-manifest.58a93ced0687eed9761ab41423da8999.js",
+    "service-worker.js": "/danielalexvega/react_employee_directory/service-worker.js",
+    "static/css/main.956cefb0.chunk.css.map": "/danielalexvega/react_employee_directory/static/css/main.956cefb0.chunk.css.map",
+    "static/js/2.ce7babb0.chunk.js.LICENSE.txt": "/danielalexvega/react_employee_directory/static/js/2.ce7babb0.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.195c5965.js",
+    "static/js/2.ce7babb0.chunk.js",
+    "static/css/main.956cefb0.chunk.css",
+    "static/js/main.172704c2.chunk.js"
+  ]
+}

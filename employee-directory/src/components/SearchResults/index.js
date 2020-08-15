@@ -1,14 +1,16 @@
 import React from "react";
-import SearchContext from "../../utils/SearchContext";
+// import SearchContext from "../../utils/SearchContext";
 import "./style.css";
 
 
 function SearchResults(props) {
-  const { filteredEmployees } = useContext(SearchContext);
+  // const { filteredEmployees } = useContext(SearchContext);
   return (
-      {filteredEmployees.map(employee => {
-        <div className="card">
-          <img src={employee.picture.medium}
+    <div style={{display:"inline-flex", flexWrap:"wrap"}}>
+
+      {props.filteredEmployees.map((employee, index)  => (
+        <div className="card d-flex flex-wrap" style={{width: 300, margin: 10}} key={index}>
+          <img src={employee.picture.large}
             alt={`${employee.name.first} ${employee.name.last}`}
             className="card-img-top" />
           <div className="card-body">
@@ -28,8 +30,11 @@ function SearchResults(props) {
             </div>
           </div>
         </div>
-      })
-    }
+      ))}
+
+
+
+    </div>
   );
 };
 

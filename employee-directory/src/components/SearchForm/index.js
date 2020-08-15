@@ -1,17 +1,16 @@
 import React from "react";
 import "./style.css";
-import SearchContext from "../../utils/SearchContext";
 
-function SearchForm() {
-  const { search, employees, handleInputChange } = useContext(SearchContext);
+
+function SearchForm(props) {
 
   return (
-    <form className="search">
+    <form className="search" onSubmit={props.handleFormSubmit}>
       <div className="form-group">
         <label htmlFor="employeeName">Employee Name:</label>
         <input
-          value={search}
-          onChange={handleInputChange}
+          value={props.search}
+          onChange={props.handleInputChange}
           name="employeeName"
           list="employeeList"
           type="text"
@@ -19,8 +18,8 @@ function SearchForm() {
           placeholder="Type the employees name"
           id="employeeName"
         />
-        <datalist id="employees">
-          {employees.map(employee => (
+        <datalist id="employeeList">
+          {props.employees.map(employee => (
             <option value={`${employee.name.first} ${employee.name.last}`}
               key={`${employee.name.first} ${employee.name.last}`} />
           ))}

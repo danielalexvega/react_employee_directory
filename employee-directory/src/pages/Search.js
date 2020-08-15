@@ -3,31 +3,39 @@ import API from "../utils/API";
 import Container from "../components/Container";
 import SearchForm from "../components/SearchForm";
 import SearchResults from "../components/SearchResults";
-import Alert from "../components/Alert";
-import SearchContext from "../utils/SearchContext";
 
 function Search() {
   const [search, setSearch] = useState("");
   const [employees, setEmployees] = useState([]);
   const [filteredEmployees, setFilteredEmployees] = useState([]);
-  const [error, setError] = useState("");
-
-  //need a debouncer... a club bouncer!
 
   useEffect(() => {
-    API.getEmployeeList.then(res => {
-      setEmployees(res.results);
-      setFilteredEmployees(res.results)
+    if (employees.length === 0) {
+      API.getEmployeeList()
+        .then(res => {
+          setEmployees(res.data.results);;
+          setFilteredEmployees(res.data.results)
+        })
         .catch(err => {
           console.log(err);
-        })
-    }), [search]
+        });
+    }
   });
 
-  handleInputChange = event => {
+  const handleInputChange = event => {
+    event.preventDefault();
     setSearch(event.target.value);
-    //as I listen to their search value.... I filter an array...
-    setFilterEmployees(employees.filter(
+    console.log(search.length);
+
+    setFilteredEmployees(employees.filter(
+      employee => (`${employee.name.first} ${employee.name.last}`).includes(search))
+    );
+  }
+
+
+  const handleFormSubmit = event => {
+    event.preventDefault();
+    setFilteredEmployees(employees.filter(
       employee => (`${employee.name.first} ${employee.name.last}`).includes(search))
     );
   }
@@ -35,18 +43,15 @@ function Search() {
   return (
     <div>
       <Container>
-        <SearchContext.Provider value={{ search, employees, filteredEmployees, error, handleInputChange }}>
-          <Alert
-            type="danger"
-            style={{ opacity: error ? 1 : 0, marginBottom: 10 }}
-          >
-            {error}
-          </Alert>
-          <SearchForm />
-          <SearchResults />
-
-
-        </SearchContext.Provider>
+        <SearchForm
+          handleInputChange={handleInputChange}
+          handleFormSubmit={handleFormSubmit}
+          employees={employees}
+          search={search}
+        />
+        <SearchResults
+          filteredEmployees={filteredEmployees}
+        />
       </Container>
     </div>
   );

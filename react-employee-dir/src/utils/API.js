@@ -2,8 +2,10 @@ import axios from "axios";
 
 const url ="https://randomuser.me/api/?results=50";
 
-export default {
+const API =  {
   getEmployeeList: function() {
     return axios.get(url);
   }
 };
+
+export default API;

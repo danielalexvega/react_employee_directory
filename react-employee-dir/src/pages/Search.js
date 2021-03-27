@@ -23,14 +23,15 @@ function Search() {
     }
   });
 
+  useEffect(() => {
+     setFilteredEmployees(employees.filter(employee => (`${employee.name.first} ${employee.name.last}`).includes(search)))
+  }, [search, employees]);
+
+
+
   const handleInputChange = event => {
     event.preventDefault();
     setSearch(event.target.value);
-    console.log(search.length);
-
-    setFilteredEmployees(employees.filter(
-      employee => (`${employee.name.first} ${employee.name.last}`).includes(search))
-    );
   }
 
 
